@@ -1,0 +1,22 @@
+{
+    "name": "echo-five/api-public-php",
+    "description": "Echo-Five API Public PHP",
+    "type": "library",
+    "version": "1.0.0",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthieu Roy",
+            "email": "m@matthieuroy.be",
+            "homepage": "https://www.matthieuroy.be"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "EchoFiveApiPublic\\": "src/"
+        }
+    }
+}
