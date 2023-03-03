@@ -2,6 +2,6 @@
 
 namespace EchoFiveApiPublic;
 
-class ApiPublic
+class EchoFiveApiPublic
 {
 }
