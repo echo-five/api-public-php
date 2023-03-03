@@ -4,22 +4,29 @@
 
 This is a PHP library to communicate with the Echo-Five public API.
 
-## HOW TO INSTALL?
+## Installation
+
+
+### How to install?
 
 This package can be installed via Composer:
 
     composer require echo-five/api-public-php
 
-### HOW TO UPDATE?
-
-Use the following command to update all Composer packages (including this one):
-
-	composer update
-
-OR
-    
+### How to update?
+  
 Use the following command to update this package only:
 
 	composer update echo-five/api-public-php
 
+OR  
+  
+Use the following command to update all Composer packages (including this one):
 
+	composer update
+
+### How to remove?
+
+This package can be unistalled via Composer:
+
+    composer remove echo-five/api-public-php
