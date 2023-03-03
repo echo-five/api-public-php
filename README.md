@@ -1,6 +1,7 @@
 # Echo-Five API Public PHP
 
 [![License](https://img.shields.io/github/license/echo-five/api-public-php?label=Licence&style=flat-square)](https://github.com/echo-five/api-public-php/blob/main/LICENSE)
+[Size](https://img.shields.io/github/languages/code-size/echo-five/api-public-php?label=Size&style=flat-square)
 
 This is a PHP library to communicate with the Echo-Five public API.
 
