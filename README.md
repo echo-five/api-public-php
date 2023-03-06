@@ -16,6 +16,7 @@ Echo-Five public API is my personal API.
 - [Get started](#get-started)
 - [Features](#features)
     * [Simple request vs Signed request](#simple-request-vs-signed-request)
+    * [Debugging](#debugging)
 - [Available methods](#available-methods)
 	* [Request](#request) 
 	* [Get Request Response](#get-request-response)
@@ -154,7 +155,7 @@ Usage examples:
 	$requestResponse = $api->getRequestResponse(1); // Return a PHP object.
 	$requestResponse = $api->getRequestResponse(0); // Return a JSON string. 
 
-This method return a JSON string or a PHP object, depending of the passed argument.  
+This method return a JSON string or a PHP object, depending on the passed argument.  
 The request response is always a full API response.  
 Here an example: 
 
@@ -224,7 +225,7 @@ Usage example:
 
 Each request is made using the PHP cURL extension.  
 This method allows to get the result of the function `curl_getinfo()`.  
-See the offical [PHP.net](https://www.php.net/manual/en/function.curl-getinfo.php) website for documentation. 
+See the official [PHP.net](https://www.php.net/manual/en/function.curl-getinfo.php) website for documentation. 
 
 > getRequestInfo()
 
