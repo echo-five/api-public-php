@@ -77,10 +77,10 @@ Assuming the library has been installed via Composer, create a new blank PHP fil
 	]);
 
 	// Get the response.
-	$apiResponse = $api->getRequestResponse();
+	$requestResponse = $api->getRequestResponse();
 
 	// Dump.
-	var_dump($apiResponse);
+	var_dump($requestResponse);
 
 *This example is stored in the project and can be downloaded here: [get-started-simple-request.php](https://github.com/echo-five/api-public-php/blob/master/examples/get-started-simple-request.php)*
 
@@ -135,7 +135,7 @@ For more convenient use, this method is "chainable".
 
 Example:
 
-	$requestResult = $api->request('post', '/api/v1/test/simple')->getRequestResponse();
+	$requestResponse = $api->request('post', '/api/v1/test/simple')->getRequestResponse();
 
 ### Get Request Response
 
@@ -150,9 +150,9 @@ The `decode` argument, is set to `true` by default.
 
 Usage examples:
 
-	$api->getRequestResponse()  // Return a PHP object. 
-	$api->getRequestResponse(1) // Return a PHP object.
-	$api->getRequestResponse(0) // Return a JSON string. 
+	$requestResponse = $api->getRequestResponse();  // Return a PHP object. 
+	$requestResponse = $api->getRequestResponse(1); // Return a PHP object.
+	$requestResponse = $api->getRequestResponse(0); // Return a JSON string. 
 
 This method return a JSON string or a PHP object, depending of the passed argument.  
 The request response is always a full API response.  
@@ -194,7 +194,7 @@ This method always return a string.
 
 Usage example:
 
-	$api->getRequestResponseStatus()
+	$requestResponseStatus = $api->getRequestResponseStatus();
 
 ### Get Request Response Data
 
@@ -206,7 +206,7 @@ This method always return a PHP object.
 
 Usage example:
 
-	$api->getRequestResponseData() 
+	$requestResponseData = $api->getRequestResponseData(); 
 
 ### Get Request Response Messages
 
@@ -218,7 +218,7 @@ This method always return a PHP array.
 
 Usage example:
 
-	$api->getRequestResponseMessages() 
+	$requestResponseMessages = $api->getRequestResponseMessages(); 
 
 ### Get Request Info
 
@@ -232,7 +232,7 @@ This method always return a PHP array.
 
 Usage example:
 
-	$api->getRequestInfo() 
+	$requestInfo = $api->getRequestInfo(); 
 
 
 
