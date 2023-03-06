@@ -107,12 +107,6 @@ class EchoFiveApiPublic
     {
         // Get the debug data.
         $debugData = $this->_debugData ?? [];
-        // Alter the values.
-        if (isset($debugData['requests']['time']))
-        {
-            // Add time unit for better understanding.
-            $debugData['requests']['time'] .= ' SECS';
-        }
         // Return.
         return $debugData;
     }
