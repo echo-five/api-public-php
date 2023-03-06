@@ -7,16 +7,23 @@ require 'vendor/autoload.php';
 use EchoFiveApiPublic\EchoFiveApiPublic;
 
 // Initialize.
-$api = new EchoFiveApiPublic('api.matthieuroy.be', 'MY_API_KEY', 'MY_API_SECRET');
+$api = new EchoFiveApiPublic('api.matthieuroy.be', 'MY_API_KEY');
+
+// Start the debugging mode.
+$api->debugStart();
 
 // Do a request.
-$api->request('post', '/api/v1/test/signed', [
+$api->request('post', '/api/v1/test/simple', [
     'foo' => 'Bar',
     'biz' => 'Buz',
 ]);
 
+// Stop the debugging mode.
+$api->debugStop();
+
 // Get the request response.
 $requestResponse = $api->getRequestResponse();
 
-// Dump.
+// Dumps.
 var_dump($requestResponse);
+var_dump($api->debugGet());
