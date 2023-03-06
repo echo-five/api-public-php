@@ -234,7 +234,7 @@ class EchoFiveApiPublic
     public function getRequestResponseStatus(): string
     {
         // Return.
-        return $this->getRequestResponse()->status ?? '';
+        return (string) $this->getRequestResponse()->status ?? '';
     }
     
     /**
