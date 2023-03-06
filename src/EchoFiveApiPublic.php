@@ -5,6 +5,14 @@ namespace EchoFiveApiPublic;
 use DateTime;
 use Exception;
 
+/**
+ * Echo-Five API Public PHP.
+ *
+ * @author Matthieu Roy <m@matthieuroy.be>
+ * @license https://github.com/echo-five/api-public-php/blob/master/LICENSE MIT
+ * @copyright 2023 Matthieu Roy
+ * @link https://github.com/echo-five/api-public-php Documentation.
+ */
 class EchoFiveApiPublic
 {
     /**
