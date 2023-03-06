@@ -342,7 +342,7 @@ Example:
 ### Debug Get
 
 This method allows to get the result of the debugging data.  
-This method call doesn't stop the debugging mode, so it can be called every time needed.
+This method call doesn't stop the debugging mode, so it can be called every time needed.  
 This is just a debugging output at the time "t".
 
 > debugGet()
