@@ -85,7 +85,7 @@ The library allows two types of requests, simple requests (unsigned) and signed 
 
 Signed requests ensure that the data that are sent to the API are not modified.  
 Signed requests, although slightly slower, are therefore more secure than simple requests.  
-When receiving a signed request, the API checks that the signature of the request sent with the data, is correct.  
+When receiving a signed request, the API checks that the signature of the request, sent with the data, is correct.  
 If the signatures do not match, the request is not processed.  
 
 The usage of signed queries is very simple!  
