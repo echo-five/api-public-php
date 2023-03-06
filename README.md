@@ -8,12 +8,19 @@ Echo-Five public API is my personal API.
 
 ## Menu
 
+- [Requirements](#requirements)
 - [Installation](#installation)
     * [How to install?](#how-to-install)
     * [How to update?](#how-to-update)
     * [How to remove?](#how-to-remove)
 - [Get started](#get-started)
+- [Features](#features)
+    * [Simple request vs Signed request](#simple-request-vs-signed-request)
 - [License](#license)
+
+## Requirements
+
+- PHP 7.4 or higher with cURL and JSON extentions
 
 ## Installation
 
@@ -68,7 +75,27 @@ Assuming the library has been installed via Composer, create a new blank PHP fil
 	// Dump.
 	var_dump($apiResponse);
 
-*This example is stored in the project and can be downloaded here: [example-get-started.php](https://github.com/echo-five/api-public-php/blob/master/examples/example-get-started.php)*
+*This example is stored in the project and can be downloaded here: [get-started-simple-request.php](https://github.com/echo-five/api-public-php/blob/master/examples/get-started-simple-request.php)*
+
+## Features
+
+### Simple request vs Signed request
+
+The library allows two types of requests, simple requests (unsigned) and signed requests (signed).  
+
+Signed requests ensure that the data that are sent to the API are not modified.  
+Signed requests, although slightly slower, are therefore more secure than simple requests.  
+When receiving a signed request, the API checks that the signature of the request sent with the data, is correct.  
+If the signatures do not match, the request is not processed.  
+
+The usage of signed queries is very simple!  
+The only thing to do is to declare the secret key associated with the API key when you instantiate the library.  
+Then all requests will be signed!
+
+	// Initialize.
+	$api = new EchoFiveApiPublic('api.matthieuroy.be', 'MY_API_KEY', 'MY_API_SECRET');
+
+*This example is stored in the project and can be downloaded here: [get-started-signed-request.php](https://github.com/echo-five/api-public-php/blob/master/examples/get-started-signed-request.php)*
 
 ## License
 
