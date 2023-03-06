@@ -17,6 +17,8 @@ Echo-Five public API is my personal API.
 - [Features](#features)
     * [Simple request vs Signed request](#simple-request-vs-signed-request)
 - [Available methods](#available-methods)
+	* [Request](#request) 
+	* [Get Request Response](#get-request-response)
 - [License](#license)
 
 ## Requirements
@@ -137,7 +139,7 @@ This method allows to get the response of the request.
 
 > getRequestResponse(bool <$decode>)
 
-- The `decode` argument defines if the request response must be decoded.  
+- The `decode` argument defines if the request response must be json-decoded or not.  
 The API replies in JSON format, so the response is a string.  
 The `decode` argument allows to get a PHP object instead a string.  
 The `decode` argument, is set to `true` by default.
