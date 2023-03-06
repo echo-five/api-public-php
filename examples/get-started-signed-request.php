@@ -16,7 +16,7 @@ $api->request('post', '/api/v1/test/signed', [
 ]);
 
 // Get the response.
-$apiResponse = $api->getRequestResponse();
+$requestResponse = $api->getRequestResponse();
 
 // Dump.
-var_dump($apiResponse);
+var_dump($requestResponse);
