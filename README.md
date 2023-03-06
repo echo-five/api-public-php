@@ -105,6 +105,11 @@ Then all requests will be signed!
 
 *This example is stored in the project and can be downloaded here: [get-started-signed-request.php](https://github.com/echo-five/api-public-php/blob/master/examples/get-started-signed-request.php)*
 
+### Debugging
+
+Troubleshooting the use of an API is not always easy.  
+The library includes a debugging mode to understand better how requests are made.
+
 ## Available methods
 
 ### Request
