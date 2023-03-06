@@ -19,6 +19,10 @@ Echo-Five public API is my personal API.
 - [Available methods](#available-methods)
 	* [Request](#request) 
 	* [Get Request Response](#get-request-response)
+	* [Get Request Response Status](#get-request-response-status)
+	* [Get Request Response Data](#get-request-response-data)
+	* [Get Request Response Messages](#get-request-response-messages)
+	* [Get Request Info](#get-request-info)
 - [License](#license)
 
 ## Requirements
@@ -113,7 +117,7 @@ Allowed values are `GET` and `POST`.
 This argument is mandatory.
 
 - The `requestEndpoint` argument defines the endpoint to hit.  
-This is an URI, e.g.: /foo/bar  
+This is an URI, e.g.: /api/v1/test/simple  
 This argument is mandatory.
 
 - The `requestParams` argument defines the data to send to the endpoint.  
@@ -131,7 +135,7 @@ For more convenient use, this method is "chainable".
 
 Example:
 
-	$requestResult = $api->request('post', '/foo/bar')->getRequestResponse();
+	$requestResult = $api->request('post', '/api/v1/test/simple')->getRequestResponse();
 
 ### Get Request Response
 
@@ -141,14 +145,101 @@ This method allows to get the response of the request.
 
 - The `decode` argument defines if the request response must be json-decoded or not.  
 The API replies in JSON format, so the response is a string.  
-The `decode` argument allows to get a PHP object instead a string.  
+The `decode` argument allows to get a PHP object instead a JSON string.  
 The `decode` argument, is set to `true` by default.
 
-Examples:
+Usage examples:
 
-	$api->getRequestResponse()  | Return a PHP object. 
-	$api->getRequestResponse(1) | Return a PHP object.
-	$api->getRequestResponse(0) | Return a JSON string.  
+	$api->getRequestResponse()  // Return a PHP object. 
+	$api->getRequestResponse(1) // Return a PHP object.
+	$api->getRequestResponse(0) // Return a JSON string. 
+
+This method return a JSON string or a PHP object, depending of the passed argument.  
+The request response is always a full API response.  
+Here an example: 
+
+	// Request:
+	$api->request('post', '/api/v1/test/simple', [
+	    'foo' => 'Bar',
+	    'biz' => 'Buz',
+	]);
+
+	// Response:
+	stdClass Object
+	(
+	    [status] => 200
+	    [data] => stdClass Object
+	        (
+	            [foo] => Bar
+	            [biz] => Buz
+	        )
+	    [messages] => Array
+	        (
+	            [0] => stdClass Object
+	                (
+	                    [type] => info
+	                    [text] => Endpoint: /api/v1/test/simple
+	                )	
+	        )
+	)
+
+### Get Request Response Status
+
+This method allows to directly get the `[status]` part of the request response.  
+The `status` is the HTTP status code associated with the response. 
+
+> getRequestResponseStatus()
+
+This method always return a string.
+
+Usage example:
+
+	$api->getRequestResponseStatus()
+
+### Get Request Response Data
+
+This method allows to directly get the `[data]` part of the request response.  
+
+> getRequestResponseData()
+
+This method always return a PHP object.
+
+Usage example:
+
+	$api->getRequestResponseData() 
+
+### Get Request Response Messages
+
+This method allows to directly get the `[messages]` part of the request response.  
+
+> getRequestResponseMessages()
+
+This method always return a PHP array.
+
+Usage example:
+
+	$api->getRequestResponseMessages() 
+
+### Get Request Info
+
+Each request is made using the PHP cURL extension.  
+This method allows to get the result of the function `curl_getinfo()`.  
+See the offical [PHP.net](https://www.php.net/manual/en/function.curl-getinfo.php) website for documentation. 
+
+> getRequestInfo()
+
+This method always return a PHP array.
+
+Usage example:
+
+	$api->getRequestInfo() 
+
+
+
+
+
+
+
 
 ## License
 
