@@ -16,11 +16,12 @@ Echo-Five public API is my personal API.
 - [Get started](#get-started)
 - [Features](#features)
     * [Simple request vs Signed request](#simple-request-vs-signed-request)
+- [Available methods](#available-methods)
 - [License](#license)
 
 ## Requirements
 
-- PHP 7.4 or higher with cURL and JSON extentions
+- PHP 7.4 or higher with cURL and JSON extensions
 
 ## Installation
 
@@ -44,7 +45,7 @@ Use the following command to update all Composer packages (including this one):
 
 ### How to remove?
 
-This package can be unistalled via Composer:
+This package can be uninstalled via Composer:
 
     composer remove echo-five/api-public-php
 
@@ -96,6 +97,56 @@ Then all requests will be signed!
 	$api = new EchoFiveApiPublic('api.matthieuroy.be', 'MY_API_KEY', 'MY_API_SECRET');
 
 *This example is stored in the project and can be downloaded here: [get-started-signed-request.php](https://github.com/echo-five/api-public-php/blob/master/examples/get-started-signed-request.php)*
+
+## Available methods
+
+### Request
+
+This method allows making an API request.
+
+> request(string $requestType, string $requestEndpoint, array <$requestParams>, string <$requestMode>)
+
+- The `requestType` argument defines the type of the request.  
+Allowed values are `GET` and `POST`.  
+This argument is mandatory.
+
+- The `requestEndpoint` argument defines the endpoint to hit.  
+This is an URI, e.g.: /foo/bar  
+This argument is mandatory.
+
+- The `requestParams` argument defines the data to send to the endpoint.  
+This is an array, key/value based, by default no data are sent to the endpoint.  
+This argument is optional.
+
+- The `requestMode` argument defines the mode of sending used with the type of the request.  
+Allowed values are `FORM`, `HTTP` and `JSON` (which is the default mode).  
+This argument is only supported with `POST`request type.
+This argument is optional.
+
+This method return the class itself and not the result of the request.  
+The request result must be fetched using another method (`getRequestResponse`).  
+For more convenient use, this method is "chainable".
+
+Example:
+
+	$requestResult = $api->request('post', '/foo/bar')->getRequestResponse();
+
+### Get Request Response
+
+This method allows to get the response of the request.  
+
+> getRequestResponse(bool <$decode>)
+
+- The `decode` argument defines if the request response must be decoded.  
+The API replies in JSON format, so the response is a string.  
+The `decode` argument allows to get a PHP object instead a string.  
+The `decode` argument, is set to `true` by default.
+
+Examples:
+
+	$api->getRequestResponse()  | Return a PHP object. 
+	$api->getRequestResponse(1) | Return a PHP object.
+	$api->getRequestResponse(0) | Return a JSON string.  
 
 ## License
 
